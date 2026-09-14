@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "generic-agent-toolkit": {
+      "command": "npx",
+      "args": ["tsx", "app/stdio.ts"],
+      "cwd": "/absolute/path/to/generic-agent-toolkit"
+    }
+  }
+}
