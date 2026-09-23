@@ -1,0 +1,30 @@
+{
+  "name": "generic-agent-toolkit",
+  "version": "0.1.0",
+  "description": "Local MCP router: agents load catalog skills to decide which other MCPs and workflows to use",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "generic-agent-toolkit": "./app/stdio.ts"
+  },
+  "scripts": {
+    "start": "tsx app/stdio.ts",
+    "dev": "tsx app/stdio.ts",
+    "check:skills": "tsx scripts/check-skills.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "yaml": "^2.8.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.7"
+  }
+}
