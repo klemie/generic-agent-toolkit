@@ -2,6 +2,7 @@
   "name": "generic-agent-toolkit",
   "version": "0.1.0",
   "description": "Local MCP router: agents load catalog skills to decide which other MCPs and workflows to use",
+  "license": "MIT",
   "type": "module",
   "engines": {
     "node": ">=22"

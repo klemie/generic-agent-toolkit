@@ -41,3 +41,7 @@ Slash commands are optional. Routing happens through tool calls, driven by this 
 ## Skills
 
 Packages live under `skills/`. Each one is an [agentskills.io](https://agentskills.io) folder with `SKILL.md`. The core route is `create-prd` → `create-agent-tasks` → `implement-agent-task` → `review-agent-task`.
+
+## License
+
+[MIT](LICENSE). Copyright (c) 2026 Kris Lemieux and Red Brick Media.
