@@ -9,6 +9,6 @@ references:
 # Clarify a PRD
 
 1. Load [references/taxonomy.md](references/taxonomy.md) for the question buckets.
-2. Use `challenge-assumptions` for the interview.
+2. Use `grill-me` for the interview.
 3. Stop when each bucket has an answer or an explicit “unknown”.
-4. Offer `create-prd` to write the document, or `open-work-item` to file a spike.
+4. Offer `create-prd` to write the document. After approval, use `create-agent-tasks` to prepare implementation.

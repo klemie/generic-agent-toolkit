@@ -4,10 +4,10 @@ Two layers in this public catalog. No inheritance. Compose by explicit `get_skil
 
 | Layer | Owns | Must not own |
 | --- | --- | --- |
-| Behavior | Questions, confirm UX | Field IDs, API payloads, channel maps |
-| Workflow | Phases, guards, when to write | Copied org-specific fact tables |
+| Behavior | Questions, confirm UX | Product requirements, tool payloads |
+| Workflow | Phases, guards, handoffs | Copied instructions from other skills |
 
-Orgs may add a third **facts** layer later (platform IDs, templates, how to call another MCP). This repo does not ship those packages.
+Projects may add a third **facts** layer later (local architecture, templates, or tool guidance). This repo does not ship project-specific packages.
 
 ## Handoff
 
@@ -20,7 +20,7 @@ After a skill is loaded in the session, further “follow `X.md`” is enough.
 
 ## Anti-patterns
 
-- Pasting tracker custom fields into a workflow.
-- Behavior skills naming platforms’ IDs.
+- Pasting project-specific settings into a reusable workflow.
+- Behavior skills prescribing tool payloads.
 - Deep chains of reference files.
 - Two skills with the same triggers.

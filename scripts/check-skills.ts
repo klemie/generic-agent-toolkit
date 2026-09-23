@@ -1,5 +1,5 @@
 #!/usr/bin/env npx tsx
-import { readdirSync, readFileSync, statSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -15,6 +15,7 @@ for (const name of readdirSync(root)) {
   const folder = join(root, name)
   if (!statSync(folder).isDirectory()) continue
   const path = join(folder, 'SKILL.md')
+  if (!existsSync(path)) continue
   try {
     const { yamlBlock } = splitSkillMarkdown(readFileSync(path, 'utf8'))
     const meta = FrontmatterSchema.parse(parseYaml(yamlBlock))

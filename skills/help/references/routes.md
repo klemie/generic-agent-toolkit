@@ -1,7 +1,9 @@
 # Route order
 
-1. Behavior skill if the user must confirm (usually `challenge-assumptions`).
+1. Behavior skill if the user must confirm (usually `grill-me`).
 2. Workflow skill for the job.
-3. Call the **other** MCP when the workflow says to write. This catalog has no issue-tracker or git tools of its own.
+3. Call connected tools or MCP servers when the workflow requires them.
 
-Do not invent field IDs, channel names, or project keys. Ask the user or use values the other MCP returns.
+For build work, route in this order: `create-prd` → `create-agent-tasks` → `implement-agent-task` → `review-agent-task`.
+
+Do not invent requirements or tool inputs. Inspect available context, then ask the user when a material decision remains.

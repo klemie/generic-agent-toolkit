@@ -2,13 +2,13 @@
 
 This repo is a **router MCP**. Before writing to an external platform, call `list_skills`, then `get_skill` for the matching workflow.
 
-Do not invent field IDs, channel names, or API shapes. Ask the user or use what the other MCP returns.
+Do not invent requirements or tool inputs. Inspect the codebase and PRD, then ask the user when material context is missing.
 
 Layers:
 
-- Behavior: how to ask and confirm (`challenge-assumptions`)
-- Workflow: phases and handoffs (`open-work-item`, `ship-work-item`, …)
+- Behavior: how to ask and confirm (`grill-me`) — invocable on its own, not only from other workflows
+- Workflow: phases and handoffs (`create-agent-tasks`, `implement-agent-task`, `review-agent-task`, …)
 
-This public catalog does not ship platform fact hubs. Orgs can add their own later via `create-skill`.
+The core lifecycle is PRD → agent tasks → implementation → review.
 
 New skills: follow `create-skill` and `create-skill/references/composition.md`.

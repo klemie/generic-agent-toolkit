@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, statSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -53,6 +53,7 @@ export function loadCatalog(): SkillCatalog {
   for (const name of readdirSync(SKILLS_ROOT)) {
     const folder = join(SKILLS_ROOT, name)
     if (!statSync(folder).isDirectory()) continue
+    if (!existsSync(join(folder, 'SKILL.md'))) continue
     const record = readPackage(folder)
     if (record.name !== name) {
       throw new Error(`Folder skills/${name} does not match frontmatter name "${record.name}"`)

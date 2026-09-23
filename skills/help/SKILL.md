@@ -8,7 +8,7 @@ references:
 
 # Help — routing map
 
-This toolkit does not replace issue-tracker, git, chat, or design MCP servers. It tells the agent **which of those to use, when, and which workflow to load first**.
+This toolkit routes agents from an idea to reviewed implementation. It tells the agent **which workflow to load and when to use connected tools or MCP servers**.
 
 ## Always
 
@@ -21,17 +21,13 @@ This toolkit does not replace issue-tracker, git, chat, or design MCP servers. I
 | Situation | Load | Then talk to |
 | --- | --- | --- |
 | User wants a product spec | `create-prd` or `clarify-prd` | docs / wiki MCP if needed |
-| File a bug or story | `open-work-item` | issue-tracker MCP |
-| Implement a ticket | `ship-work-item` | git-host MCP |
-| Review a ticket or PR | `review-work-item` | tracker + git MCPs |
+| Break an approved PRD into work | `create-agent-tasks` | codebase and planning tools |
+| Execute one task | `implement-agent-task` | code and connected MCPs |
+| Validate one completed task | `review-agent-task` | code, diff, and test tools |
 | PR feedback loop | `address-review-feedback` | git MCP |
-| Incoming bug | `triage-bug` | tracker MCP |
-| Incoming feature ask | `triage-feature` | tracker MCP |
-| Order the backlog | `prioritize-backlog` | tracker MCP |
-| Daily status | `standup-update` | tracker + chat MCPs |
 | Analytics event names | `write-analytics` | your analytics docs, not a required MCP |
-| Design ask | `request-design` | design MCP if connected |
-| Confirm a risky plan | `challenge-assumptions` | none |
+| Design ask | `create-design-request` | design MCP if connected |
+| Confirm a risky plan | `grill-me` | none |
 | Author a new skill | `create-skill` | none |
 
 Follow [references/routes.md](references/routes.md) for load order and anti-patterns.

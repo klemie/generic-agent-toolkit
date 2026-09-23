@@ -8,22 +8,23 @@ const VERSION = '0.1.0'
 
 const ROUTER_INSTRUCTIONS = `\
 This MCP is a skill and MCP router. The host harness may also expose other \
-MCP servers (issue trackers, git hosts, chat, design tools).
+MCP servers and tools used by coding agents.
 
 REQUIRED: Before using another MCP to write or make a consequential change, \
 call list_skills, then get_skill for the matching workflow.
 
 Routing hints:
-  - Issue tracker create/edit → open-work-item
-  - Issue tracker reads       → tracker MCP via the workflow skill
-  - Pull requests             → ship-work-item / review-work-item
-  - Chat posts                → standup-update (ask before posting)
-  - Design files              → request-design
+  - Turn a PRD into work      → create-agent-tasks
+  - Execute one task          → implement-agent-task
+  - Validate completed work   → review-agent-task
+  - Pull request feedback     → address-review-feedback
+  - Design files              → create-design-request
   - Product docs              → create-prd / clarify-prd
+  - Ask the user one decision at a time → grill-me
   - Which skill to pick       → help
 
-This catalog ships workflows only. Do not invent org-specific field IDs, \
-channels, or project keys — ask the user or use what the other MCP returns.`
+This catalog ships portable workflows. Do not invent missing requirements \
+or tool inputs — inspect available context, then ask the user when needed.`
 
 export function createRouterServer(): McpServer {
   const catalog = loadCatalog()
